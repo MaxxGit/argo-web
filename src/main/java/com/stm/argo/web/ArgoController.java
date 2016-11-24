@@ -18,6 +18,7 @@ package com.stm.argo.web;
 
 import com.stm.argo.service.CityService;
 
+import com.stm.argo.service.CscService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,9 @@ public class ArgoController {
 
 	@Autowired
 	private CityService cityService;
+
+	@Autowired
+	private CscService cscService;
 
 	@GetMapping("/")
 	@ResponseBody
@@ -52,6 +56,12 @@ public class ArgoController {
 	public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		return "greeting";
+	}
+
+	@RequestMapping("/csc")
+	public String csc(@RequestParam(value="name", required=false) String name, Model model) {
+		model.addAttribute("csclist", cscService.findAllCsc());
+		return "csc";
 	}
 
 }

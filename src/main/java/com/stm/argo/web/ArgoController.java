@@ -35,12 +35,12 @@ public class ArgoController {
 	@Autowired
 	private CityService cityService;
 
-//	@GetMapping("/")
-//	@ResponseBody
-//	@Transactional(readOnly = true)
-//	public String helloWorld() {
-//		return this.cityService.getCity("Bath", "UK").getName();
-//	}
+	@GetMapping("/")
+	@ResponseBody
+	@Transactional(readOnly = true)
+	public String helloWorld() {
+		return this.cityService.getCity("Bath", "UK").getName();
+	}
 
 	@RequestMapping("/city")
 	public String city(@RequestParam(value="name", required=false, defaultValue="Bath") String name, @RequestParam(value="country", required=false, defaultValue="UK") String country, Model model) {

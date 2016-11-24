@@ -37,7 +37,7 @@ public class Csc implements Serializable {
 	@Column(nullable = false, name = "descr")
 	private String description;
 
-	@Column(name = "params")
+	@Column(name = "params", length = 500)
 	private String parameters;
 
 	protected Csc() {

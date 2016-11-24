@@ -5,20 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'City name is, ' + ${name} + '!'" />
-
     <h1>Csc list</h1>
 
     <table>
         <tr>
+            <th>ID</th>
             <th>NAME</th>
             <th>DESCRIPRTION</th>
-            <th>PARAMS</th>
+            <!--<th>PARAMS</th>-->
         </tr>
         <tr th:each="csc : ${csclist}">
+            <td th:text="${csc.id}"></td>
             <td th:text="${csc.nick}"></td>
             <td th:text="${csc.description}"></td>
-            <td th:text="${csc.parameters}"></td>
+            <!--<td th:text="${csc.parameters}"></td>-->
         </tr>
     </table>
 </body>

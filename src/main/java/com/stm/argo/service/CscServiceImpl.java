@@ -38,7 +38,7 @@ class CscServiceImpl implements CscService {
 	}
 
 	@Override
-	public Page<Csc> findAllCscByCriteria(CscSearchCriteria criteria, Pageable pageable) {
+	public Page<Csc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable) {
 
 		Assert.notNull(criteria, "Criteria must not be null");
 		String name = criteria.getName();

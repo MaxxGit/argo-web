@@ -26,6 +26,6 @@ public interface CscService {
 
 	Page<Csc> findAllCsc();
 
-	Page<Csc> findAllCscByCriteria(CscSearchCriteria criteria, Pageable pageable);
+	Page<Csc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable);
 
 }

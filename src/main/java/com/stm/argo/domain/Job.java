@@ -18,6 +18,7 @@ package com.stm.argo.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "objects")
@@ -81,6 +82,9 @@ public class Job implements Serializable {
 
 	@Column
 	private Long pd;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "job")
+    private Set<Activity> activities;
 
 
 	protected Job() {
@@ -176,9 +180,11 @@ public class Job implements Serializable {
 		return pd;
 	}
 
+    public Set<Activity> getActivities() {
+        return activities;
+    }
 
-
-	@Override
+    @Override
 	public String toString() {
 		return nome + "," + categoria + "," + tipo;
 	}

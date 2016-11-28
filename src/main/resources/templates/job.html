@@ -12,13 +12,18 @@
             <th>ID</th>
             <th>NAME</th>
             <th>DESCRIPRTION</th>
+            <th>TIPO</th>
+            <th>CATEGORIA</th>
+            <th>NUM</th>
             <!--<th>PARAMS</th>-->
         </tr>
         <tr th:each="job : ${jobs}">
             <td th:text="${job.id}"></td>
             <td th:text="${job.nome}"></td>
             <td th:text="${job.description}"></td>
-            <!--<td th:text="${csc.parameters}"></td>-->
+            <td th:text="${job.tipo}"></td>
+            <td th:text="${job.categoria}"></td>
+            <td th:text="${#lists.size(job.activities)}">0</td>
         </tr>
     </table>
 </body>

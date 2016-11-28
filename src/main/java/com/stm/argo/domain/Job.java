@@ -67,7 +67,7 @@ public class Job implements Serializable {
 	@Column(name = "paramstring", length = 1000)
 	private String parameters;
 
-	@Column(name = "PROXYDISPATCH")
+	@Column(name = "proxydispatch")
 	private String proxyDispatch;
 
 	@Column

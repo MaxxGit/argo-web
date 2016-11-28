@@ -19,6 +19,7 @@ package com.stm.argo.web;
 import com.stm.argo.service.CityService;
 
 import com.stm.argo.service.CscService;
+import com.stm.argo.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +39,9 @@ public class ArgoController {
 
 	@Autowired
 	private CscService cscService;
+
+	@Autowired
+	private JobService jobService;
 
 	@GetMapping("/")
 	@ResponseBody
@@ -62,6 +66,12 @@ public class ArgoController {
 	public String csc(@RequestParam(value="name", required=false) String name, Model model) {
 		model.addAttribute("csclist", cscService.findAllCsc());
 		return "csc";
+	}
+
+	@RequestMapping("/job")
+	public String job(@RequestParam(value="name", required=false) String name, Model model) {
+		model.addAttribute("jobs", jobService.findAllJobs());
+		return "job";
 	}
 
 }

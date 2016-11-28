@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Argo jobs detail</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Job list</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPRTION</th>
+            <!--<th>PARAMS</th>-->
+        </tr>
+        <tr th:each="job : ${jobs}">
+            <td th:text="${job.id}"></td>
+            <td th:text="${job.nome}"></td>
+            <td th:text="${job.description}"></td>
+            <!--<td th:text="${csc.parameters}"></td>-->
+        </tr>
+    </table>
+</body>
+</html>

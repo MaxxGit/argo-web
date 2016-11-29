@@ -17,6 +17,10 @@
 package com.stm.argo.service;
 
 import com.stm.argo.domain.ArgoJob;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.job.SimpleJob;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,4 +47,5 @@ class ArgoJobServiceImpl implements ArgoJobService {
 	public ArgoJob findById(Long id) {
 		return argoJobRepository.findById(id);
 	}
+
 }

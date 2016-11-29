@@ -16,14 +16,10 @@
 
 package com.stm.argo.service;
 
-import com.stm.argo.domain.Csc;
-import com.stm.argo.domain.Job;
+import com.stm.argo.domain.ArgoJob;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
 
 @Component("jobService")
 @Transactional
@@ -38,9 +34,13 @@ class JobServiceImpl implements JobService {
 
 
 	@Override
-	public Page<Job> findAllJobs() {
+	public Page<ArgoJob> findAllJobs() {
 
 		return this.jobRepository.findAll( null );
 	}
 
+	@Override
+	public ArgoJob findById(Long id) {
+		return jobRepository.findById(id);
+	}
 }

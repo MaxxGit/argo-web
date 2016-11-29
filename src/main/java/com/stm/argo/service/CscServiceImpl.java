@@ -16,9 +16,7 @@
 
 package com.stm.argo.service;
 
-import com.stm.argo.domain.City;
-import com.stm.argo.domain.Csc;
-import com.stm.argo.domain.HotelSummary;
+import com.stm.argo.domain.ArgoCsc;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -38,7 +36,7 @@ class CscServiceImpl implements CscService {
 	}
 
 	@Override
-	public Page<Csc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable) {
+	public Page<ArgoCsc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable) {
 
 		Assert.notNull(criteria, "Criteria must not be null");
 		String name = criteria.getName();
@@ -52,7 +50,7 @@ class CscServiceImpl implements CscService {
 	}
 
 	@Override
-	public Page<Csc> findAllCsc() {
+	public Page<ArgoCsc> findAllCsc() {
 
 		return this.cscRepository.findAll(null);
 	}

@@ -69,8 +69,12 @@ public class ArgoController {
 	}
 
 	@RequestMapping("/job")
-	public String job(@RequestParam(value="name", required=false) String name, Model model) {
-		model.addAttribute("jobs", jobService.findAllJobs());
+	public String job(@RequestParam(value="id", required=false) Long id, Model model) {
+		if (null != id) {
+			model.addAttribute("jobs", jobService.findById(id));
+		} else {
+			model.addAttribute("jobs", jobService.findAllJobs());
+		}
 		return "job";
 	}
 

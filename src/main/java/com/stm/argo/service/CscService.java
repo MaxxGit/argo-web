@@ -16,16 +16,14 @@
 
 package com.stm.argo.service;
 
-import com.stm.argo.domain.City;
-import com.stm.argo.domain.Csc;
-import com.stm.argo.domain.HotelSummary;
+import com.stm.argo.domain.ArgoCsc;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface CscService {
 
-	Page<Csc> findAllCsc();
+	Page<ArgoCsc> findAllCsc();
 
-	Page<Csc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable);
+	Page<ArgoCsc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable);
 
 }

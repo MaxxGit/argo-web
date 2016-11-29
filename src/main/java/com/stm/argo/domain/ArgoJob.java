@@ -22,7 +22,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "objects")
-public class Job implements Serializable {
+public class ArgoJob implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -84,10 +84,10 @@ public class Job implements Serializable {
 	private Long pd;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "job")
-    private Set<Activity> activities;
+    private Set<ArgoActivity> activities;
 
 
-	protected Job() {
+	protected ArgoJob() {
 	}
 
 	public enum Tipo {
@@ -180,7 +180,7 @@ public class Job implements Serializable {
 		return pd;
 	}
 
-    public Set<Activity> getActivities() {
+    public Set<ArgoActivity> getActivities() {
         return activities;
     }
 

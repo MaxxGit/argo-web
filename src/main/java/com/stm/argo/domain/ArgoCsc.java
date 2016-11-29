@@ -16,14 +16,12 @@
 
 package com.stm.argo.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Csc implements Serializable {
+@Table(name = "csc")
+public class ArgoCsc implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -40,7 +38,7 @@ public class Csc implements Serializable {
 	@Column(name = "params", length = 500)
 	private String parameters;
 
-	protected Csc() {
+	protected ArgoCsc() {
 	}
 
 	public Long getId() {

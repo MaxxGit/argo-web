@@ -21,18 +21,18 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "objects_actions")
-public class Activity implements Serializable {
+public class ArgoActivity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
-    @Column(name = "IDACTIVITY")
+	@Column(name = "IDACTIVITY")
 	private Long idActivity;
 
 	@ManyToOne
 	@JoinColumn(name = "IDPROCESS")
-	private Job job;
+	private ArgoJob job;
 
 	@Column(name = "DAYOFWEEK")
 	private Long dayOfWeek = 0L;
@@ -59,7 +59,7 @@ public class Activity implements Serializable {
 		return endHour;
 	}
 
-	public Job getJob() {
+	public ArgoJob getJob() {
 		return job;
 	}
 }

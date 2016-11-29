@@ -16,14 +16,12 @@
 
 package com.stm.argo.service;
 
-import com.stm.argo.domain.ArgoCsc;
+import com.stm.argo.domain.ArgoJob;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
-public interface CscService {
+public interface ArgoJobService {
 
-	Page<ArgoCsc> findAllCsc();
+	Page<ArgoJob> findAllJobs();
 
-	Page<ArgoCsc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable);
-
+	ArgoJob findById(Long id);
 }

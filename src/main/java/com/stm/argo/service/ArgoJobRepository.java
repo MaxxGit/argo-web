@@ -16,15 +16,17 @@
 
 package com.stm.argo.service;
 
-import com.stm.argo.domain.ArgoCsc;
+import com.stm.argo.domain.ArgoJob;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.Repository;
 
-interface CscRepository extends Repository<ArgoCsc, Long> {
+interface ArgoJobRepository extends Repository<ArgoJob, Long> {
 
-	Page<ArgoCsc> findAll(Pageable pageable);
+	Page<ArgoJob> findAll(Pageable pageable);
 
-	Page<ArgoCsc> findByNick(String nick, Pageable pageable);
+	Page<ArgoJob> findByNome(String nome, Pageable pageable);
+
+	ArgoJob findById(Long id);
 
 }

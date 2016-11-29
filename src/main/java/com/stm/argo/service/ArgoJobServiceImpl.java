@@ -23,24 +23,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component("jobService")
 @Transactional
-class JobServiceImpl implements JobService {
+class ArgoJobServiceImpl implements ArgoJobService {
 
-	private final JobRepository jobRepository;
+	private final ArgoJobRepository argoJobRepository;
 
 
-	public JobServiceImpl(JobRepository jobRepository) {
-		this.jobRepository = jobRepository;
+	public ArgoJobServiceImpl(ArgoJobRepository argoJobRepository) {
+		this.argoJobRepository = argoJobRepository;
 	}
 
 
 	@Override
 	public Page<ArgoJob> findAllJobs() {
 
-		return this.jobRepository.findAll( null );
+		return this.argoJobRepository.findAll( null );
 	}
 
 	@Override
 	public ArgoJob findById(Long id) {
-		return jobRepository.findById(id);
+		return argoJobRepository.findById(id);
 	}
 }

@@ -18,18 +18,16 @@ package com.stm.argo.web;
 
 import com.stm.argo.service.CityService;
 
-import com.stm.argo.service.CscService;
-import com.stm.argo.service.JobService;
+import com.stm.argo.service.ArgoCscService;
+import com.stm.argo.service.ArgoJobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ArgoController {
@@ -38,10 +36,10 @@ public class ArgoController {
 	private CityService cityService;
 
 	@Autowired
-	private CscService cscService;
+	private ArgoCscService cscService;
 
 	@Autowired
-	private JobService jobService;
+	private ArgoJobService jobService;
 
 	@GetMapping("/")
 	@ResponseBody

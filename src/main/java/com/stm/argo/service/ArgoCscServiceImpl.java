@@ -26,33 +26,33 @@ import org.springframework.util.StringUtils;
 
 @Component("cscService")
 @Transactional
-class CscServiceImpl implements CscService {
+class ArgoCscServiceImpl implements ArgoCscService {
 
-	private final CscRepository cscRepository;
+	private final ArgoCscRepository argoCscRepository;
 
 
-	public CscServiceImpl(CscRepository cscRepository) {
-		this.cscRepository = cscRepository;
+	public ArgoCscServiceImpl(ArgoCscRepository argoCscRepository) {
+		this.argoCscRepository = argoCscRepository;
 	}
 
 	@Override
-	public Page<ArgoCsc> findCscByCriteria(CscSearchCriteria criteria, Pageable pageable) {
+	public Page<ArgoCsc> findCscByCriteria(ArgoCscSearchCriteria criteria, Pageable pageable) {
 
 		Assert.notNull(criteria, "Criteria must not be null");
 		String name = criteria.getName();
 
 		if (!StringUtils.hasLength(name)) {
-			return this.cscRepository.findAll(null);
+			return this.argoCscRepository.findAll(null);
 		}
 
-		return this.cscRepository
+		return this.argoCscRepository
 				.findByNick( name, pageable);
 	}
 
 	@Override
 	public Page<ArgoCsc> findAllCsc() {
 
-		return this.cscRepository.findAll(null);
+		return this.argoCscRepository.findAll(null);
 	}
 
 }

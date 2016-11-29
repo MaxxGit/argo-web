@@ -20,16 +20,16 @@ import org.springframework.util.Assert;
 
 import java.io.Serializable;
 
-public class CscSearchCriteria implements Serializable {
+public class ArgoCscSearchCriteria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String name;
 
-	public CscSearchCriteria() {
+	public ArgoCscSearchCriteria() {
 	}
 
-	public CscSearchCriteria(String name) {
+	public ArgoCscSearchCriteria(String name) {
 		Assert.notNull(name, "Name must not be null");
 		this.name = name;
 	}
